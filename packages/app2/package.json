@@ -1,0 +1,13 @@
+{
+  "name": "app2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@loadable/server": "^5.14.0"
+  },
+  "devDependencies": {
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.14.0"
+  }
+}
