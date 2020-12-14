@@ -6,8 +6,8 @@ module.exports = {
   output: {
     libraryTarget: "commonjs-module",
     chunkLoading: "async-http-node",
+    publicPath: "http://localhost:3001/",
   },
-  entry: "./src/serverEntry.js",
   target: "node",
   module: {
     rules: [{ test: /\.jsx?/, use: "babel-loader" }],
@@ -15,14 +15,21 @@ module.exports = {
   plugins: [
     new LoadablePlugin(),
     new ServerSideModuleFederationPlugin({
-      name: "app1",
-      library: { type: "commonjs-module" },
-      remotes: {
-        app2: "http://localhost:3001/app2.js",
+      name: "app2",
+      library: {
+        type: "commonjs-module",
+      },
+      exposes: {
+        "./Header": "./src/Header",
+        ".": "./src",
       },
       shared: {
         react: { singleton: true },
       },
     }),
   ],
+  devServer: {
+    port: 3001,
+    writeToDisk: true,
+  },
 };

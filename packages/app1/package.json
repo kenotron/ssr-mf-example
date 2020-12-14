@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "@loadable/server": "^5.14.0"
+    "@loadable/server": "^5.14.0",
+    "@loadable/component": "^5.14.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -20,9 +21,11 @@
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",
     "express": "^4.17.1",
-    "webpack-dev-middleware": "^4.0.2"
+    "webpack-dev-middleware": "^4.0.2",
+    "server-side-module-federation-plugin": "^1.0.2"
   },
   "scripts": {
+    "build": "webpack",
     "start": "babel-node src/server.js"
   }
 }
